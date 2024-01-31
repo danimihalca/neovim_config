@@ -68,14 +68,17 @@
     - [ ] Show current method location ? (Class::method)
     - [ ] Project specific configurations ?
     - [ ] Language specific integration
+        - [ ] Rust
+            - [ ] rust-analyzer
         - [ ] C++
             - [x] CMake
             - [x] Switch source/header
                 - `ClangdSwitchSourceHeader`
             - [ ] clangformat
-        - [ ] Rust
-            - [ ] rust-analyzer
-            - [ ] clangd
+            - [x] Debug
+                - `DapToggleBreakpoint`
+                - `DapContinue`
+            - [x] clangd
                 - [x] Fix auto include
 ``` 
 mason_lspconfig.setup_handlers {
