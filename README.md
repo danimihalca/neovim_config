@@ -29,7 +29,7 @@
 - [ ] IDE Features
     - [ ] Fuzzy search
     - [ ] LSP
-        - [ ] C++
+        - [x] C++
         - [ ] Rust
         - [ ] PlantUML
         - [ ] Typescript
@@ -42,30 +42,42 @@
             - `:Format`
         - [ ] on save    
     - [ ] Navigation
-        - [ ] Go to definition
+        - [x] Go to definition
+            - `gd`
+        - [x] Go to declaration
+            - `gD`
         - [ ] Go to file
-        - [ ] Go to declaration
-        - [ ] Go to references
+        - [x] Go back
+            - `[C-o]`
+        - [x] Go to references
+            - `gr`
+        - [ ] Popup documentation
+        - [ ] Code action
+        - [ ] Jump between warnings / errors ?
         - [ ] Recently used files / buffers etc
-        - [ ] Access Explorer (sidebar)
+        - [x] Access Explorer (sidebar)
             - `nvim-tree` package
-        - [ ] New file
+            - `<leader>E`
+        - [x] New file
+            - `:edit <FILE>`
         - [ ] Go to path (with autocomplete)
-        - [ ] Search by file name
+        - [x] Search by file name
+            - `<leader>sf`
         - [ ] Search by file name in Git files
         - [ ] Search by content (also in git ? )
     - [ ] Show current method location ? (Class::method)
     - [ ] Project specific configurations ?
     - [ ] Language specific integration
         - [ ] C++
-            - [ ] CMake
-            - [ ] Switch source/header
+            - [x] CMake
+            - [x] Switch source/header
+                - `ClangdSwitchSourceHeader`
             - [ ] clangformat
         - [ ] Rust
             - [ ] rust-analyzer
             - [ ] clangd
                 - [x] Fix auto include
-```
+``` 
 mason_lspconfig.setup_handlers {
   function(server_name)
     ...
