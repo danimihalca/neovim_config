@@ -271,7 +271,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+ { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -573,10 +573,10 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
+   clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+   rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -611,6 +611,13 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+    }
+    require('lspconfig').clangd.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
+      cmd = {"clangd", "--header-insertion=never"},
     }
   end,
 }
