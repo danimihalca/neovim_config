@@ -53,8 +53,10 @@
             - `[C-o]`
         - [x] Go to references
             - `gr`
-        - [ ] Popup documentation
-        - [ ] Code action
+        - [x] Hover documentation
+            - `K`
+        - [x] Code action
+            - `<leader>ca`
         - [x] Find by symbol
             - `<leader>ws`
         - [ ] Jump between warnings / errors ?
@@ -104,7 +106,7 @@ mason_lspconfig.setup_handlers {
 
 - [ ] Nice to have
     - [ ] undotree
-    - [ ] tree-sitter
+    - [x] tree-sitter
     - [ ] harpoon ? 
     - [ ] git-fugitive ?
     - [ ] lsp-zero ?
