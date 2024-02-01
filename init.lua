@@ -83,9 +83,8 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true, opts = { ensure_installed = { "codelldb" }}},
-      'williamboman/mason-lspconfig.nvim',
-
+      { 'williamboman/mason.nvim', config = true, opts = { ensure_installed = { "cpptools" }}},
+        'williamboman/mason-lspconfig.nvim',
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
@@ -577,9 +576,11 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
    rust_analyzer = {},
+   cmake = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  -- For Cargo TOML
+  taplo = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

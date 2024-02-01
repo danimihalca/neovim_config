@@ -30,7 +30,9 @@
     - [ ] Fuzzy search
     - [ ] LSP
         - [x] C++
-        - [ ] Rust
+        - [x] CMake
+        - [x] Rust
+        - [x] Toml
         - [ ] PlantUML
         - [ ] Typescript
     - [ ] Build ?
@@ -53,6 +55,8 @@
             - `gr`
         - [ ] Popup documentation
         - [ ] Code action
+        - [x] Find by symbol
+            - `<leader>ws`
         - [ ] Jump between warnings / errors ?
             - `folke/trouble.nvim` ?
         - [ ] Recently used files / buffers etc
@@ -70,12 +74,14 @@
     - [ ] Project specific configurations ?
     - [ ] Language specific integration
         - [ ] Rust
-            - [ ] rust-analyzer
+            - [x] rust-analyzer
+            - [x] Debug
+                - `:RustLsp debuggables`
         - [ ] C++
             - [x] CMake
             - [x] Switch source/header
                 - `ClangdSwitchSourceHeader`
-            - [ ] clangformat
+            - [ ] clangformat (included already via clangd?)
             - [x] Debug
                 - `DapToggleBreakpoint`
                 - `DapContinue`

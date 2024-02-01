@@ -6,6 +6,13 @@ vim.wo.relativenumber = true
 
 
 return {
+
+
+	{
+		'mrcjkb/rustaceanvim',
+		version = '4.4.0', -- Recommended
+		ft = { 'rust' },
+	},
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
