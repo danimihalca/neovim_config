@@ -20,12 +20,12 @@
         - [ ] Open in view (file, definition etc)
         - [x] Close a view
             - `[C-w] + q`
-    - [ ] Lateral Explorer (NVChad C-n like?)
+    - [x] Lateral Explorer (NVChad C-n like?)
+        - `<leader>E` / `:NvimTreeOpen`
     - [x] Key bindings suggestions
         - `which-key`
     - [x] Search key bindings
-        - `:Telescope` => `keymaps`
-        - `<leader> ss:w`
+        - `<leader> ss` => `keymaps`
 - [ ] IDE Features
     - [ ] Fuzzy search
     - [ ] LSP
@@ -54,6 +54,7 @@
         - [ ] Popup documentation
         - [ ] Code action
         - [ ] Jump between warnings / errors ?
+            - `folke/trouble.nvim` ?
         - [ ] Recently used files / buffers etc
         - [x] Access Explorer (sidebar)
             - `nvim-tree` package

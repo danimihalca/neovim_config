@@ -65,11 +65,38 @@ return {
 			},
 			cmake_dap_configuration = {    -- debug settings for cmake
 				name = "cpp",
-				type = "codelldb",
+				type = "cppdbg",
 				request = "launch",
 				stopOnEntry = false,
 				runInTerminal = true,
 				console = "integratedTerminal",
+				--args = {"-enable-pretty-printing"},
+				setupCommands =
+				{
+					{
+						text = "-enable-pretty-printing",
+						description = "enable pretty printing",
+						ignoreFailures = true
+					},
+
+					{
+						description = "Set Disassembly Flavor to Intel",
+						text = "-gdb-set disassembly-flavor intel",
+						ignoreFailures = true
+					},
+					{
+						description = "Without this, gdb won't load the scripts from this dir",
+						text = "add-auto-load-safe-path /usr/share/gdb/auto-load"
+					},
+					{
+						description =
+						"Default directory where script that should be auto-loaded installed in my system. Without this, things like pretty-printing will not work",
+						text = "add-auto-load-scripts-directory /usr/share/gdb/auto-load"
+					},
+
+
+
+				},
 			},
 			cmake_executor = { -- executor to use
 				name = "quickfix", -- name of the executor
