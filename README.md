@@ -70,7 +70,8 @@
         - [ ] Go to path (with autocomplete)
         - [x] Search by file name
             - `<leader>sf`
-        - [ ] Search by file name in Git files
+        - [x] Search Git tracked by file name
+            - `<leader>gf`
         - [ ] Search by content (also in git ? )
     - [ ] Show current method location ? (Class::method)
     - [ ] Project specific configurations ?
@@ -114,4 +115,5 @@ mason_lspconfig.setup_handlers {
     - [x] Source current config for debugging
         - `:so`
     - [ ] tree-sitter playground (see abstract syntax tree of the file) ?
-
+    - [x] Repeat last command
+        - `[#].`
