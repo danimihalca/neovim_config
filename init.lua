@@ -189,16 +189,15 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'Mofiqul/vscode.nvim',
     priority = 1000,
     lazy = false,
     config = function()
-      require('onedark').setup {
+      require('vscode').setup {
         -- Set a style preset. 'dark' is default.
         style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
       }
-      require('onedark').load()
+      require('vscode').load()
     end,
   },
 
@@ -209,7 +208,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'auto',
+        theme = 'vscode',
         component_separators = '|',
         section_separators = '',
       },
@@ -586,6 +585,9 @@ local servers = {
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   -- For Cargo TOML
   taplo = {},
+
+  -- For C#
+  omnisharp = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -680,5 +682,21 @@ cmp.setup {
   },
 }
 
+local dap = require("dap")
+dap.adapters.netcoredbg = {
+  type = 'executable',
+  command = '/opt/netcoredbg/netcoredbg',
+  args = {'--interpreter=vscode'}
+}
+dap.configurations.cs = {
+  {
+    type = "netcoredbg",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+        return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end,
+  },
+}
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

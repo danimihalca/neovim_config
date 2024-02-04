@@ -5,7 +5,8 @@
 - [ ] UI
     - [x] Improved font
         - `https://github.com/ryanoasis/nerd-fonts`
-    - [ ] Theme
+    - [x] Theme
+        - `Mofiqul/vscode.nvim`
     - [ ] Icons (warning, error, explorer filetypes etc)
     - [x] Line Numbers
         - `vm.wo.number = true`
@@ -33,6 +34,7 @@
         - [x] CMake
         - [x] Rust
         - [x] Toml
+        - [x] C#
         - [ ] PlantUML
         - [ ] Typescript
     - [ ] Build ?
@@ -55,6 +57,10 @@
             - `gr`
         - [x] Hover documentation
             - `K`
+        - [x] Comment / uncomment 
+            - `gcc` : current line
+            - `gbc` : block
+            - more options unde `gc`
         - [x] Code action
             - `<leader>ca`
         - [x] Find by symbol
@@ -83,14 +89,20 @@
         - [ ] C++
             - [x] CMake
             - [x] Switch source/header
-                - `ClangdSwitchSourceHeader`
+                - `:ClangdSwitchSourceHeader`
             - [ ] clangformat (included already via clangd?)
             - [x] Debug
-                - `DapToggleBreakpoint`
-                - `DapContinue`
+                - `:DapToggleBreakpoint`
+                - `:DapContinue`
             - [x] clangd
                 - [x] Fix auto include
-``` 
+        - [ ] C#
+            - [x] LSP
+                - `omnisharp` Mason LSP
+            - [x] Debug
+                - `netcoredbg`
+                - same debugging commands as for C++, but first needs manual build via `:!dotnet build` and specify dll path for second command, not binary !!!
+```
 mason_lspconfig.setup_handlers {
   function(server_name)
     ...
@@ -110,6 +122,8 @@ mason_lspconfig.setup_handlers {
     - [x] tree-sitter
     - [ ] harpoon ? 
     - [ ] git-fugitive ?
+    - [x] hop (quick jump) ?
+        - `<leader>ff`
     - [ ] lsp-zero ?
 - [ ] Misc
     - [x] Source current config for debugging

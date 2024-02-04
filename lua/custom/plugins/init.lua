@@ -6,7 +6,38 @@ vim.wo.relativenumber = true
 
 
 return {
+	{
+		'smoka7/hop.nvim',
+		version = "*",
+		opts = {},
+		config = function()
+			local hop = require('hop')
+			hop.setup { keys = 'etovxqpdygfblzhckisuran' }
+			local directions = require('hop.hint').HintDirection
+			vim.keymap.set('', '<leader>ff', function()
+				hop.hint_words({ current_line_only = false })
+			end, { remap = true })
+		end
+	},
+	{
+		'https://gitlab.com/itaranto/plantuml.nvim',
+		version = '*',
+		config = function()
+			require('plantuml').setup(
+				{
+					renderer = {
+						type = 'image',
+						options = {
+							prog = 'feh',
+							dark_mode = true,
+						}
+					},
+					render_on_write = true,
+				}
 
+			)
+		end,
+	},
 
 	{
 		'mrcjkb/rustaceanvim',
