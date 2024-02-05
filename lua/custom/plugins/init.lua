@@ -7,6 +7,13 @@ vim.wo.relativenumber = true
 
 return {
 	{
+
+		'theHamsta/nvim-dap-virtual-text',
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end
+	},
+	{
 		'smoka7/hop.nvim',
 		version = "*",
 		opts = {},

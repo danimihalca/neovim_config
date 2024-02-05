@@ -57,6 +57,8 @@
             - `gr`
         - [x] Hover documentation
             - `K`
+        - [x] Hover debug evaluate
+            - `:lua require("dapui").eval()` 1x to open, 2x to switch focus
         - [x] Comment / uncomment 
             - `gcc` : current line
             - `gbc` : block
@@ -118,6 +120,7 @@ mason_lspconfig.setup_handlers {
 ```
 
 - [ ] Nice to have
+    - [ ] `nvim-dap-virtual-text`
     - [ ] undotree
     - [x] tree-sitter
     - [ ] harpoon ? 
@@ -125,9 +128,13 @@ mason_lspconfig.setup_handlers {
     - [x] hop (quick jump) ?
         - `<leader>ff`
     - [ ] lsp-zero ?
+    - [ ] Central input floating window (LazyVim like) ?
 - [ ] Misc
     - [x] Source current config for debugging
         - `:so`
     - [ ] tree-sitter playground (see abstract syntax tree of the file) ?
     - [x] Repeat last command
         - `[#].`
+    - [x] Extract buffer to a tab
+        - `[C-w]T`
+        - Switch tabs `gt/T`
