@@ -692,21 +692,25 @@ cmp.setup {
   },
 }
 
-local dap = require("dap")
-dap.adapters.netcoredbg = {
-  type = 'executable',
-  command = '/opt/netcoredbg/netcoredbg',
-  args = {'--interpreter=vscode'}
-}
-dap.configurations.cs = {
-  {
-    type = "netcoredbg",
-    name = "launch - netcoredbg",
-    request = "launch",
-    program = function()
-        return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-    end,
-  },
-}
+require("mason-nvim-dap").setup({
+  ensure_installed = { "cppdbg" }
+})
+
+-- local dap = require("dap")
+-- dap.adapters.netcoredbg = {
+--   type = 'executable',
+--   command = '/opt/netcoredbg/netcoredbg',
+--   args = {'--interpreter=vscode'}
+-- }
+-- dap.configurations.cs = {
+--   {
+--     type = "netcoredbg",
+--     name = "launch - netcoredbg",
+--     request = "launch",
+--     program = function()
+--         return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+--     end,
+--   },
+-- }
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
