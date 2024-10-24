@@ -37,6 +37,8 @@
         - [x] C#
         - [ ] PlantUML
         - [ ] Typescript
+        - [ ] Parameters inlay hints
+        - [ ] Auotocomplete function parameters / signature parameter hover (hrsh7th/nvim-cmp ?)
     - [ ] Build ?
     - [ ] Run target ?
     - [ ] Debug ?

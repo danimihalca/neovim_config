@@ -576,6 +576,7 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
+   zls = {},
    clangd = {},
   -- gopls = {},
   -- pyright = {},
@@ -614,6 +615,7 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    require 'lspconfig'.zls.setup{}
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
